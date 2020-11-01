@@ -20,19 +20,12 @@ const makeImgCard = ({ preview, original, description }) => {
 const galleryItem = galleryItems.map(makeImgCard);
 galleryListEl.append(...galleryItem);
 
-//Modal open/close
-
 const modalEl = document.querySelector(".js-lightbox");
 const imgBigEl = document.querySelector(".lightbox__image");
-
 const modalBtnEl = document.querySelector(".lightbox__button");
 
 galleryListEl.addEventListener("click", onOpenModal);
 modalBtnEl.addEventListener("click", onCloseModal);
-
-function onPaletteContainerClick(evt) {
-  const isColorSwatchEl = evt.target.classList.contains("color-swatch");
-}
 
 function onOpenModal(evt) {
   imgBigEl.src = evt.target.dataset.source;
